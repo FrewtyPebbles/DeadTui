@@ -158,6 +158,7 @@ class Container(_Widget):
                     line_num += 1
                     min_height += 1
             elif isinstance(child, _Widget): # is a widget
+                child.x = self.x
                 match self.style.fit:
                     case FitType.DEFAULT:
                         child.width = min(child.width, self.width)
